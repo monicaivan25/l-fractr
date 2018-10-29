@@ -8,11 +8,11 @@ body{
 	height: 98%;
 	width: 98%	;
 	display: grid;
-	grid-template-columns: 15% 70%;
-	grid-gap:8%;
+	grid-template-columns: 20% 74%;
+	grid-template-rows: ;
+	grid-gap:4%;
 }
 aside{
-	background-color: #202020;
 	grid-row: 1/2;
 	grid-column: 1/2;
 }
@@ -21,4 +21,37 @@ aside{
 	grid-row: 1/2;
 	grid-column: 2/3;
 	background-color: #707070;
+}
+
+.asideItem{
+	text-align: center;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: #202020;
+	margin-bottom: 10px;
+}
+
+.myh1{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 25px; 
+	font-style: thin; 
+	font-variant: normal; 
+	font-weight: 100; 
+	line-height: 25px; 
+	color: white;
+	margin-top: 0px;
+	margin-bottom:5px;
+}
+
+.myh2{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 14px; 
+	font-style: thin; 
+	font-variant: normal; 
+	font-weight: 100; 
+	line-height: 14px; 
+	color: white;
+	margin-top: 0px;
+	margin-bottom:5px;
 }

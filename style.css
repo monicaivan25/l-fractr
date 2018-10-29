@@ -25,6 +25,15 @@ h1 {
   line-height: 26.4px; 
   color: white;
 } 
+h4{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-size:10px;
+  font-style: thin; 
+  font-variant: normal; 
+  font-weight: 100; 
+  line-height:11.4px;
+  color: white;
+}
 h3 { 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   font-size: 14px; 
