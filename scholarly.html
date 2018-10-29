@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-fractr</title>
+
+    <style>
+    article{
+        max-width: 800px;
+        margin: auto;
+    }
+
+</style>
+</head>
+<body>
+
+    <article>
+        <header>
+            <h1 property="schema:name">L-fractr</h1>
+            <p role="doc-subtitle">Aplicatie web din cadrul cursului "Dezvoltarea aplicatiilor web la nivel de client"</p>
+        </header>
+        <div role="contentinfo">
+            <section typeof="sa:AuthorsList">
+                <h3>Autori</h3>
+                <ul>
+                    <li typeof="sa:ContributorRole" property="schema:author"> 
+                        <meta property="schema:givenName" content="Stefan">
+                        <meta property="schema:familyName" content="Cojocaru">
+                        <span property="schema:name">Stefan Cojocaru</span>
+
+                    </li>
+                    <li typeof="sa:ContributorRole" property="schema:contributor"> 
+                        <meta property="schema:givenName" content="Monica">
+                        <meta property="schema:familyName" content="Ivan">
+                        <span property="schema:name">Monica Ivan</span>
+
+                    </li>
+                </ul>
+            </section>
+            <section typeof="sa:Affiliations">
+                <h3>Afilieri</h3>
+                <ul>
+                    <li id="sa">
+                        <span typeof="schema:Organization" resource="https://profs.info.uaic.ro/~busaco/teach/courses/cliw/">
+                            <span property="schema:name">Dezvoltarea aplicatiilor web la nivel de client</span>,
+                            <span property="schema:parentOrganization">
+                                <span typeof="schema:Organization">
+                                    <span property="schema:name">Facultatea de Informatica</span>
+                                    —
+                                    <span property="schema:location" typeof="schema:Place">
+                                        <span property="schema:address" typeof="schema:PostalAddress">
+                                            <span property="schema:addressLocality">Iasi</span>,
+                                            <span property="schema:addressRegion">Iasi</span>,
+                                            <span property="schema:addressCountry">Romania</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <h3>Introducere</h3>
+        <p>Acest proiect are ca principal scop creearea unui mediu in care cei
+        interesati de fractali de tip Lindenmayer isi pot testa expresiile regulate si pot vedea diverse exemple de sisteme Lindenmayer.</p>
+
+        <h3>Cerinta proiectului</h3>
+        <p>Să se implementeze un editor şi generator vizual de fractali de tip 
+            Lindenmayer (L-systems), oferind reprezentări alternative de tip raster (imagini în format PNG) şi vectorial (documente SVG) ce pot fi prelucrate pe client.
+        De asemenea, instrumentul Web va pune la dispoziţie o listă predefinită de fractali de tip Lindenmayer, utilizatorul având posibilitatea gestionării şi salvării/încărcării local şi de la distanţă a acestora. Bonus: oferirea de vizualizări 3D via WebGL.</p>
+
+        <h3>Modul de lucru la proiect</h3>
+        <p>Avem setate deadline-uri pentru a termina pagina la care am ales sa lucram in etapa curenta, iar odata ajuns la deadline ne intalnim pentru a stabili etapa urmatoare in dezvoltarea proiectului. De asemena, avem stabilite intalniri periodice pentru a discuta si a cere ajutor, daca e nevoie, cu privire la componentele curente. Tot odata, utilizam repository-ul de github pentru a putea tine evidenta versiunilor si a distribui codul mai usor.</p>
+
+        <h3>Functionalitatea aplicatiei</h3>
+        <p>Aplicatia web contine 3 pagini. Prima pagina, index.html, continte linkuri catre celalte componente ale proiectului, dar si catre repository-ul de github, pagina corespunzatoare cursului de dezvoltare a aplicatiilor web si pagina de Wikipedia de pe care cei interesati
+            pot afla mai multe despre fractalii Lindenmayer. Cea de a doua pagina, createOwn.html, pune la dispozitie utlizatorilor o unealta prin care acestia pot creea si vizualiza fractali. Acestia pot oferi ca input pentru generatorul de fractali informatii precum punctul din care sa inceapa, axioma de inceput, regulile de rescriere, numarul de iteratii si unghiuri care vor fi folosite in desenarea fractalului. Tot odata, aceasta pagina ofera utilizatorilor posibilitatea de a salva munca lor in diverse formate. Cea de a treia
+        pagina, premade.html, pune la dispozitie utilizatorilor o galerie cu diverse exemple de fractali si datele de input care vor fi folosite pentru generarea acestora.</p>
+
+        <h3>Stadiul actual al proiectului</h3>
+        <p>La data de 1.11.2018 proiectul se afla in faza de prototip nefunctional.</p>
+
+
+        <div role="doc-bibliography">
+            <h3> Bibliografie </h3>
+            <ul>
+                <li typeof="schema:Book" role="doc-biblioentry" property="schema:citation">
+                    <cite property="schema:name">
+                        <a href="http://algorithmicbotany.org/papers/#abop">The Algorithmic Beauty of Plants
+                        </a>
+                    </cite>,
+                    autor 
+                    <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Springer</span>
+                        <span property="schema:familyName">Verlag</span>
+                    </span>
+                    ; publicat in
+                    <time property="schema:datePublished" datatype="xsd:gYear"
+                    datetime="1990">1990</time>.
+                </li>
+                <li typeof="schema:Book" role="doc-biblioentry" resource="http://www0.cs.ucl.ac.uk/staff/p.bentley/teaching/L6_reading/lsystems.pdf" property="schema:citation">
+                    <cite property="schema:name">
+                        <a href="http://www0.cs.ucl.ac.uk/staff/p.bentley/teaching/L6_reading/lsystems.pdf">Mathematical Models for Cellular Interactions in Development 
+                        </a>
+                    </cite>,
+                    autor 
+                    <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Aristid</span>
+                        <span property="schema:familyName">Lindenmayer</span>
+                    </span>
+                    ; publicat in
+                    <time property="schema:datePublished" datatype="xsd:gYear"
+                    datetime="1968">1968</time>.
+                </li>
+                <li typeof="schema:WebPage" role="doc-biblioentry" resource="https://en.wikipedia.org/wiki/L-system" property="schema:citation">
+                    <cite property="schema:name">
+                        <a href="https://en.wikipedia.org/wiki/L-system">L-systems</a>
+                    </cite>,
+                    autor 
+                    <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Unknown,</span>
+                        <span property="schema:familyName">Wikipedia</span>
+                    </span>
+                    ; publicat in
+                    <time property="schema:datePublished" datatype="xsd:gYear"
+                    datetime="2017">2017</time>.
+                </li>
+                <li typeof="schema:WebPage" role="doc-biblioentry" resource="https://www.w3schools.com" property="schema:citation">
+                    <cite property="schema:name">
+                        <a href="https://www.w3schools.com">W3Schools</a>
+                    </cite>,
+                    autor 
+                    <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Refnes</span>
+                        <span property="schema:familyName">Data</span>
+                    </span>
+                    ; publicat in
+                    <time property="schema:datePublished" datatype="xsd:gYear"
+                    datetime="1999">1999</time>.
+                </li>
+
+            </ul>
+        </div>
+    </article>
+
+</body>
+</html>
