@@ -55,3 +55,43 @@ aside{
 	margin-top: 0px;
 	margin-bottom:5px;
 }
+
+.nicebutton{
+	background-color: #202020;
+	border: none;
+	color: white;
+	font-size: 25px;
+	font-style: thin; 
+	font-variant: normal; 
+	font-weight: 100; 
+	cursor: pointer; 	
+}
+
+.nicebutton:focus{
+	background-color: #303030;
+	outline:0;
+}
+
+input[type=radio]{
+	display:none;
+	margin:10px;
+}
+
+input[type=radio] + label{
+	display: inline-block;
+	margin: -2px;
+	padding:4px 12px;
+	background-color: #202020;
+	border-color:#ddd;
+	color: white;
+	font-size: 25px;
+	font-style: thin; 
+	font-variant: normal; 
+	font-weight: 100; 
+	cursor: pointer; 	
+}
+
+input[type=radio]:checked + label{
+	background-image: none;
+	background-color: #303030;
+}
