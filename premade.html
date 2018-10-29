@@ -10,95 +10,220 @@
 <body>
 	<div class = "wrapper">
 		<div class="box">
-			<img src="images/koch_snowflake.png" alt="Koch Snowflake" />
+			<img src="images/koch_snowflake.png" alt="Koch Snowflake" onclick="openModal();currentImage(1)" />
 			<div class="middle">
 				<p> Koch Snowflake </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/fractal_plant.png" alt="Fractal Plant"/>
+			<img src="images/fractal_plant.png" alt="Fractal Plant" onclick="openModal();currentImage(2)"/>
 			<div class="middle">
 				<p> Fractal Plant </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/dragon_curve.png" alt="Dragon Curve"/>
+			<img src="images/dragon_curve.png" alt="Dragon Curve" onclick="openModal()"/>
 			<div class="middle">
 				<p> Dragon Curve </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/highway_dragon.png" alt="Highway Dragon"/>
-			<div class="middle">
+			<img src="images/highway_dragon.png" alt="Highway Dragon" onclick="openModal()"/>
+			<div class="middle" onclick="openModal();openImage(1)">
 				<p> Highway Dragon </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/joined_cross_curves.png" alt="Joined Cross Curves"/>
-			<div class="middle">
+			<img src="images/joined_cross_curves.png" alt="Joined Cross Curves" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Joined Cross Curves </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/kevs_pond_weed.png" alt="Kev's Pond Weed"/>
-			<div class="middle">
+			<img src="images/kevs_pond_weed.png" alt="Kev's Pond Weed" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Kev's Pond Weed </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/kevs_tree.png" alt="Kev's Tree"/>
-			<div class="middle">
+			<img src="images/kevs_tree.png" alt="Kev's Tree" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Kev's Tree </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/kevs_wispy_tree.png" alt="Kev's Wispy Tree"/>
-			<div class="middle">
+			<img src="images/kevs_wispy_tree.png" alt="Kev's Wispy Tree" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Kev's Wispy Tree </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/lace.png" alt="Lace"/>
-			<div class="middle">
+			<img src="images/lace.png" alt="Lace" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Lace </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/penrose_tiling.png" alt="Penrose Tiling"/>
-			<div class="middle">
+			<img src="images/penrose_tiling.png" alt="Penrose Tiling" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Penrose Tiling </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/pleasant_error.png" alt="Pleasant Error"/>
-			<div class="middle">
+			<img src="images/pleasant_error.png" alt="Pleasant Error" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Pleasant Error </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/sierpinski_median_curve.png" alt="Sierpinski's Median Curve"/>
-			<div class="middle">
+			<img src="images/sierpinski_median_curve.png" alt="Sierpinski's Median Curve" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Sierpinski's Median Curve </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/space_filling_curve.png" alt="Space Filling Curve"/>
-			<div class="middle">
+			<img src="images/space_filling_curve.png" alt="Space Filling Curve" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Space Filling Curve </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/sierpinski_gasket.png" alt="Sierpinski's Gasket"/>
-			<div class="middle">
+			<img src="images/sierpinski_gasket.png" alt="Sierpinski's Gasket" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Sierpinski's Gasket </p>
 			</div>
 		</div>
 		<div class="box">
-			<img src="images/sierpinski_carpet.png" alt="Sierpinski's Carpet"/>
-			<div class="middle">
+			<img src="images/sierpinski_carpet.png" alt="Sierpinski's Carpet" onclick="openModal()"/>
+			<div class="middle" onclick="openModal()">
 				<p> Sierpinski's Carpet </p>
 			</div>
 		</div>
 	</div>
+
+	<div id="gallery" class="gallery">
+		<span class="close-button" onclick="closeModal()">&times;</span>
+		<div class="gallery-content">
+			<div class="gallery-image">
+				<div class="numbertext">1 / 15</div>
+				<img src="images/koch_snowflake.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">2 / 15</div>
+				<img src="images/fractal_plant.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">3 / 15</div>
+				<img src="images/dragon_curve.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">4 / 15</div>
+				<img src="images/highway_dragon.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">5 / 15</div>
+				<img src="images/joined_cross_curves.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">6 / 15</div>
+				<img src="images/kevs_pond_weed.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">7 / 15</div>
+				<img src="images/kevs_tree.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">8 / 15</div>
+				<img src="images/kevs_wispy_tree.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">9 / 15</div>
+				<img src="images/lace.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">10 / 15</div>
+				<img src="images/penrose_tiling.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">11 / 15</div>
+				<img src="images/pleasant_error.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">12 / 15</div>
+				<img src="images/sierpinski_median_curve.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">13 / 15</div>
+				<img src="images/space_filling_curve.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">14 / 15</div>
+				<img src="images/sierpinski_gasket.png" style="width:100%">
+			</div>
+
+			<div class="gallery-image">
+				<div class="numbertext">15 / 15</div>
+				<img src="images/sierpinski_carpet.png" style="width:100%">
+			</div>
+
+			<a class="prev" onclick="plusImages(-1)">&#10094;</a>
+			<a class="next" onclick="plusImages(1)">&#10095;</a>
+
+			<div class="expression-container">
+				<p id="expression"></p>
+			</div>		
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function openModal(){
+			document.getElementById('gallery').style.display = "block";
+		}
+
+		function closeModal(){
+			document.getElementById('gallery').style.display = 'none';
+		}
+
+		var imageIndex = 1;
+		showImages(imageIndex);
+
+		function plusImages(n) {
+			showImages(imageIndex += n);
+		}
+
+		function currentImage(n) {
+			showImages(imageIndex = n);
+		}
+
+		function showImages(n) {
+			var i;
+			var images = document.getElementsByClassName("gallery-image");
+			var captionText = document.getElementById("caption");
+			if (n > images.length) {
+				imageIndex = 1
+			}
+			if (n < 1) {
+				imageIndex = images.length;
+			}
+			for (i = 0; i < images.length; i++) {
+				images[i].style.display = "none";
+			}
+			images[imageIndex-1].style.display = "block";
+			captionText.innerHTML = dots[imageIndex-1].alt;
+		}
+	</script>
 </body>
 </html>
