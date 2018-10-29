@@ -141,3 +141,28 @@ mark {
   background-color: white;
   color: black;
 }
+
+
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    grid-template-columns: 100%;
+  }
+  .prev,
+  .next{
+    display: none;
+  }
+  .gallery-image{
+    grid-column: 1/4;    
+  }
+} 
+
+@media only screen and (min-width: 701px) and (max-width: 1200px) {
+  .wrapper {
+    grid-gap: 0.5%;
+    grid-template-columns: 33% 33% 33%;
+  }
+  .prev,
+  .next{
+    display: none;
+  }
+} 
