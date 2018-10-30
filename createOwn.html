@@ -5,16 +5,17 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="styleOwn.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="wrapper">
 		<aside>
-			<div class="asideItem">
+			<div class="asideItem" id="asit1">
 				<p class="myh1">Starting Position</p>
 				<p class="myh2">click on the canvas to set</p>
 				<p class="myh1">312,223</p>
 			</div>
-			<div class="asideItem">
+			<div class="asideItem" id="asit2">
 				<p class="myh1">Number of iterations</p>
 				<div>					
 					<input type='radio' value='1' name='radio' id='radio1'/>
@@ -39,7 +40,7 @@
 					<label for='radio7'> 7 </label>
 				</div>
 			</div>
-			<div class="asideItem">
+			<div class="asideItem" id="asit3">
 				<p class="myh1">Angles</p>
 				<div style="display: grid; grid-template-columns: 50% 50%	;
 				grid-template-rows: auto"><p class="myh2">Starting: </p> <input type="text" class="smallInput" id="startDegree"/></div>
@@ -47,23 +48,31 @@
 				<div style="display: grid; grid-template-columns: 50% 50%;
 				grid-template-rows: auto""><p class="myh2">Incrementing: </p> <input type="text" class="smallInput" id="incrDegree"/></div>
 			</div>
-			<div class="asideItem">
+			<div class="asideItem" id="asit4">
 				<p class="myh1">Axiom</p>
 				<input type="text" id="axiom"/>
 			</div>
-			<div class="asideItem">
+			<div class="asideItem" id="asit5">
 				<p class="myh1">Rules</p>
 				<div><input type="text" class="smallInput" id="literal"/> <span style="color: white;">=</span> <input type="text" id="rule"/></div>
 				<div style="height:8px"></div>
 				<button>Add</button>
 			</div>
-			<div class="asideItem">
+			<div class="asideItem" id="asit6">
 				<p class="myh1">Render</p>
 			</div>
+			
+			<div style="margin-top:50px" id="asit7">
+				<div class="asideItem" style="color:white; width:40%; margin-left:30%">Save as PNG</div>
+				<div class="asideItem" style="color:white; width:40%; margin-left:30%">Save as SVG</div>
+			</div>
+			
 		</aside>
 		<main class="canvas">
 
 		</main>
 	</div>
+
+	<a href="index.html" class="fa fa-home" id="home-button"></a>
 </body>
 </html>
