@@ -154,6 +154,10 @@ mark {
   .gallery-image{
     grid-column: 1/4;    
   }
+  h3{
+    font-size: 20px;
+    line-height: 25px;
+  }
 } 
 
 @media only screen and (min-width: 701px) and (max-width: 1200px) {
@@ -164,5 +168,12 @@ mark {
   .prev,
   .next{
     display: none;
+  }
+  .gallery-image{
+    grid-column: 1/4;    
+  }
+  h3{
+    font-size: 20px;
+    line-height: 25px;
   }
 } 
