@@ -151,14 +151,14 @@ input[type=text]{
 		font-size: 50px;
 	}
 	#save1{
-		width:40%;
-		margin-left:30%;
+		width:100%;
+		margin-left:0%;
 		line-height: 50px;
 		font-size: 50px;
 	}
 	#save2{
-		width:40%;
-		margin-left:30%;
+		width:100%;
+		margin-left:0%;
 		line-height: 50px;
 		font-size: 50px;
 	}
