@@ -90,12 +90,20 @@ input[type=text]{
 #save1{
 	color:white; 
 	width:40%; 
-	margin-left:30%
+	margin-left:30%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
+	font-style: thin; 
+	font-variant: normal; 
+	font-weight: 100; 
 }
 #save2{
 	color:white; 
 	width:40%; 
-	margin-left:30%
+	margin-left:30%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
+	font-style: thin; 
+	font-variant: normal; 
+	font-weight: 100; 
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 501px) {
@@ -143,14 +151,14 @@ input[type=text]{
 		font-size: 50px;
 	}
 	#save1{
-		width:100%;
-		margin:0px;
+		width:40%;
+		margin-left:30%;
 		line-height: 50px;
 		font-size: 50px;
 	}
 	#save2{
-		width:100%;
-		margin:0px;
+		width:40%;
+		margin-left:30%;
 		line-height: 50px;
 		font-size: 50px;
 	}
@@ -187,4 +195,16 @@ input[type=text]{
 		margin:4px 2px;
 	}
 }
+#addbutton{
+		height:30px;
+		width:50px;
+		font-size:14px;
+		background-color: #202020;
+		color: white;
+		border:2px solid white;
+		text-align: center;
+		text-decoration:none;
+		cursor:pointer;
+		margin:4px 2px;
+	}
 
