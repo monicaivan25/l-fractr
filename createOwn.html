@@ -42,37 +42,54 @@
 			</div>
 			<div class="asideItem" id="asit3">
 				<p class="myh1">Angles</p>
-				<div style="display: grid; grid-template-columns: 50% 50%	;
-				grid-template-rows: auto"><p class="myh2">Starting: </p> <input type="text" class="smallInput" id="startDegree"/></div>
+				<div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto">
+					<p class="myh2">Starting: </p>
+					<div class="anglesInput">
+						<input type="text" class="smallInput" id="startDegree"/>
+					</div>
+				</div>
 				<div style="height:3px"></div>
-				<div style="display: grid; grid-template-columns: 50% 50%;
-				grid-template-rows: auto""><p class="myh2">Incrementing: </p> <input type="text" class="smallInput" id="incrDegree"/></div>
+				<div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto">
+					<p class="myh2">Incrementing: </p>
+					<div class="anglesInput"> 
+						<input type="text" class="smallInput" id="incrDegree"/>
+					</div>
+				</div>
 			</div>
 			<div class="asideItem" id="asit4">
 				<p class="myh1">Axiom</p>
-				<input type="text" id="axiom"/>
+				<div class="axrule">
+					<input type="text" id="axiom"/>
+				</div>
 			</div>
 			<div class="asideItem" id="asit5">
 				<p class="myh1">Rules</p>
-				<div><input type="text" class="smallInput" id="literal"/> <span style="color: white;">=</span> <input type="text" id="rule"/></div>
-				<div style="height:8px"></div>
-				<button>Add</button>
-			</div>
-			<div class="asideItem" id="asit6">
-				<p class="myh1">Render</p>
-			</div>
-			
-			<div style="margin-top:50px" id="asit7">
-				<div class="asideItem" style="color:white; width:40%; margin-left:30%">Save as PNG</div>
-				<div class="asideItem" style="color:white; width:40%; margin-left:30%">Save as SVG</div>
-			</div>
-			
-		</aside>
-		<main class="canvas">
+				<div>
+					<div class="anglesInput" id="rulesSmall">
+						<input type="text" class="smallInput" id="literal"/>
+					</div>
+					<span id="eq" style="color: white;">=</span>
+					<div class="axrule">
+						<input type="text" id="rule"/></div>
+					</div>
+					<div style="height:8px"></div>
+					<button id="addbutton">Add</button>
+				</div>
+				<div class="asideItem" id="asit6">
+					<p class="myh1">Render</p>
+				</div>
 
-		</main>
-	</div>
+				<div style="margin-top:50px" id="asit7">
+					<div class="asideItem" id="save1">Save as PNG</div>
+					<div class="asideItem" id="save2">Save as SVG</div>
+				</div>
 
-	<a href="index.html" class="fa fa-home" id="home-button"></a>
-</body>
-</html>
+			</aside>
+			<main class="canvas">
+
+			</main>
+		</div>
+
+		<a href="index.html" class="fa fa-home" id="home-button"></a>
+	</body>
+	</html>

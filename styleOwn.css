@@ -87,22 +87,35 @@ input[type=text]{
 	width:30px;
 }
 
+#save1{
+	color:white; 
+	width:40%; 
+	margin-left:30%
+}
+#save2{
+	color:white; 
+	width:40%; 
+	margin-left:30%
+}
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) and (min-width: 501px) {
 	.wrapper{
 		padding-left: 1%;
 		padding-right: 1%;
 		padding-top: 0.5%;
-		height: 98%;
-		width: 98%;
+		height: 98vh;
+		width: 98vw;
 		display: grid;
 		grid-template-columns: auto;
-		grid-template-rows: auto 50%;
+		grid-template-rows: auto auto;
 		grid-gap:4%;
 	}
 	.canvas{
 		grid-row: 2/3;
 		grid-column: 1/2;
+		height: 98vw;
+		width: 98vw;
+		margin-bottom:10px;
 	}
 	aside{
 		grid-row: 1/2;
@@ -112,13 +125,66 @@ input[type=text]{
 	.asideItem{
 		text-align: center;
 		width: auto;
-		margin-left:25%;
-		max-width:50%;
+		max-width:100%;
 		padding-top: 8px;
 		padding-bottom: 8px;
 		background-color: #202020;
 		margin-bottom: 10px;
 	}
-	
+	.myh1{
+		line-height: 50px;
+		font-size: 50px;
+	}
+	.myh2{
+		line-height: 35px;
+		font-size: 35px;
+	}
+	input[type=radio] + label{
+		font-size: 50px;
+	}
+	#save1{
+		width:100%;
+		margin:0px;
+		line-height: 50px;
+		font-size: 50px;
+	}
+	#save2{
+		width:100%;
+		margin:0px;
+		line-height: 50px;
+		font-size: 50px;
+	}
+	input[type=text]{
+		width:100%;
+		height:90%;
+	}
+	.anglesInput{
+		height:30px;
+		width:100px;
+	}
+	.axrule{
+		margin-left:35%;
+		height:30px;
+		width:30%;
+	}
+	#eq{
+		padding-top:10px;
+		font-size: 50px;
+	}
+	#rulesSmall{
+		margin-left:45%;
+	}
+	#addbutton{
+		height:50px;
+		width:100px;
+		font-size:30px;
+		background-color: #202020;
+		color: white;
+		border:2px solid white;
+		text-align: center;
+		text-decoration:none;
+		cursor:pointer;
+		margin:4px 2px;
+	}
 }
 
