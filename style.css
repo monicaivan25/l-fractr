@@ -8,7 +8,6 @@ img {
   max-width: 100%;
   object-fit: cover;
   transition: .5s ease;
-  backface-visibility: hidden;
 }
 
 body {
@@ -20,7 +19,6 @@ h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   font-size: 40px; 
   font-style: thin; 
-  font-variant: normal; 
   font-weight: 100; 
   line-height: 26.4px; 
   color: white;
@@ -29,7 +27,6 @@ h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   font-size: 14px; 
   font-style: normal; 
-  font-variant: normal; 
   font-weight: 100; 
   line-height: 15.4px; 
   color: white;
@@ -38,7 +35,6 @@ p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   font-size: 14px; 
   font-style: normal; 
-  font-variant: normal; 
   font-weight: 50; 
   line-height: 20px; 
   color: white;

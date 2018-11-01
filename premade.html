@@ -141,9 +141,6 @@
 			document.getElementById('gallery').style.display = 'none';
 		}
 
-		var imageIndex = 1;
-		showImages(imageIndex);
-
 		function plusImages(n) {
 			showImages(imageIndex += n);
 		}
@@ -154,19 +151,20 @@
 
 		function showImages(n) {
 			var images = document.getElementsByClassName("gallery-image");
-			var imgs = document.getElementsByClassName("gallery-image");
-			var captionText = document.getElementById("expression");
+			var expression = document.getElementById("expression");
 			if (n > images.length) {
 				imageIndex = 1
 			}
-			if (n < 1) {
+			else if (n < 1) {
 				imageIndex = images.length;
 			}
+			else imageIndex = n;
+			
 			for (var i = 0; i < images.length; i++) {
 				images[i].style.display = "none";
 			}
 			images[imageIndex-1].style.display = "block";
-			captionText.innerHTML = imgs[imageIndex-1].alt;
+			expression.innerHTML = images[imageIndex-1].alt;
 		}
 	</script>
 </body>
