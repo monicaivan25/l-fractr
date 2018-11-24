@@ -112,6 +112,7 @@
 			</form>
 		</div>
 
+		<h1 id="bigOne"></h1>
 
 		<script>
 			  // Initialize Firebase
@@ -190,6 +191,8 @@
 			  		logoutBtn.style.display = 'block';
 			  		loginBtn.style.display = 'none';
 			  		signupBtn.style.display = 'none';
+			  		writeUserData("email");
+
 			  	} else {
 			  		console.log('not logged in');
 			  		logoutBtn.style.display = 'none';
@@ -197,6 +200,15 @@
 			  		signupBtn.style.display = 'block';
 			  	}
 			  })
+
+			  var database = firebase.database();
+
+			  function writeUserData(email) {
+			  	console.log(email);
+			  	firebase.database().ref('users/' + email).set({
+			  		caca: 2
+			  	});
+			  }
 
 			</script>
 		</body>
