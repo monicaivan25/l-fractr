@@ -40,9 +40,10 @@ p {
   color: white;
 } 
 
-#home-button{
+.bottom-button{
+  cursor: pointer;
   padding: 20px;
-  font-size: 30px;
+  font-size: 30px !important;
   width: 30px;
   text-align: center;
   text-decoration: none;
@@ -52,6 +53,17 @@ p {
   background-color: #202020;
   position: fixed; 
   bottom: 20px; 
-  left: 30px; 
   z-index: 99; 
+}
+
+#home{
+  left: 30px; 
+}
+
+#loginbtn{
+  left: 120px; 
+}
+
+#savebtn{
+  left: 210px;
 }

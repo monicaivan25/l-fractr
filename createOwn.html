@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="styleOwn.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+	<!-- <script src="createOwn.js"></script> -->
+
 </head>
 <body>
 	<div class="wrapper">
@@ -79,17 +82,122 @@
 					<p class="myh1">Render</p>
 				</div>
 
-				<div style="margin-top:50px" id="asit7">
-					<div class="asideItem" id="save1">Save as PNG</div>
-					<div class="asideItem" id="save2">Save as SVG</div>
-				</div>
+				
 
 			</aside>
 			<main class="canvas">
 
 			</main>
 		</div>
+		<!--bottom buttons -->
+		<a href="index.html" class="bottom-button fa fa-home " id="home"></a>
+		<span id="loginbtn" class="fa fa-fire bottom-button" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;"></span>
+		<span id="savebtn" class="fa fa-download bottom-button" ></span>
 
-		<a href="index.html" class="fa fa-home" id="home-button"></a>
-	</body>
-	</html>
+		<!--Login modal-->
+		<div id="login-form" class="modal">
+
+			<form class="modal-content">
+
+				<div class="container">
+					<input type="text" class="field" placeholder="Enter Email" id="txtEmail" required>
+					<input type="password" class="field" style="width:100%" placeholder="Enter Password" id="textPsw" required>
+
+					<button type="button" id="login" class="formbtn">Log In</button>
+					<button type="button" id="logout" class="formbtn">Log out</button>
+					<button type="button" id="signup" class="formbtn">Sign Up</button>
+					<button type="button" onclick="document.getElementById('login-form').style.display='none'" class="formbtn">Cancel</button>
+					
+				</div>
+			</form>
+		</div>
+
+
+		<script>
+			  // Initialize Firebase
+			  var config = {
+			  	apiKey: "AIzaSyAZxvFhAhfPt__c6jb1aLTUM8jhdzD44eg",
+			  	authDomain: "l-fractr.firebaseapp.com",
+			  	databaseURL: "https://l-fractr.firebaseio.com",
+			  	projectId: "l-fractr",
+			  	storageBucket: "l-fractr.appspot.com",
+			  	messagingSenderId: "480520325235"
+			  };
+			  firebase.initializeApp(config);
+
+			  const modal = document.getElementById('login-form');
+			  const txtEmail = document.getElementById("txtEmail");
+			  const textPsw = document.getElementById("textPsw");
+			  const loginBtn = document.getElementById("login");
+			  const signupBtn = document.getElementById("signup");
+			  const logoutBtn = document.getElementById("logout");
+
+			  function exitModal(){
+			  	modal.style.display = 'none';
+			  	txtEmail.value='';
+			  	textPsw.value='';
+			  }
+
+			  function validateEmail(inputText)
+			  {
+			  	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			  	if(inputText.match(mailformat))
+			  	{
+			  		return true;
+			  	}
+			  	else
+			  	{
+			  		alert("You have entered an invalid email address!");
+			  		return false;
+			  	}
+			  }
+
+			  loginBtn.addEventListener('click', e => {
+			  	console.log("login")
+			  	const email = txtEmail.value;
+			  	const pass = textPsw.value;
+			  	const auth = firebase.auth();
+			  	if(validateEmail(email))
+			  	{
+			  		const promise = auth.signInWithEmailAndPassword(email, pass);
+			  		promise.catch(e => console.log(e.message));
+			  		exitModal();
+			  	}
+			  });
+			  
+			  signupBtn.addEventListener('click', e =>{
+			  	console.log("signup")
+			  	const email = txtEmail.value;
+			  	const pass = textPsw.value;
+			  	const auth = firebase.auth();
+			  	if(validateEmail(email))
+			  	{
+			  		const promise =  auth.createUserWithEmailAndPassword(email, pass);
+			  		promise.catch(e => console.log(e.message));
+			  		exitModal();
+			  	}
+			  });
+
+			  logoutBtn.addEventListener('click', e => {
+			  	console.log('logout');
+			  	firebase.auth().signOut();
+			  	exitModal();
+			  });
+
+			  firebase.auth().onAuthStateChanged(firebaseUser => {
+			  	if(firebaseUser){
+			  		console.log(firebaseUser);
+			  		logoutBtn.style.display = 'block';
+			  		loginBtn.style.display = 'none';
+			  		signupBtn.style.display = 'none';
+			  	} else {
+			  		console.log('not logged in');
+			  		logoutBtn.style.display = 'none';
+			  		loginBtn.style.display = 'block';
+			  		signupBtn.style.display = 'block';
+			  	}
+			  })
+
+			</script>
+		</body>
+		</html>
