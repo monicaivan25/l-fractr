@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <article>
+    <article resource="#" typeof="schema:ScholarlyArticle">
         <header>
             <h1 property="schema:name">L-fractr</h1>
             <p role="doc-subtitle">Aplicatie web din cadrul cursului "Dezvoltarea aplicatiilor web la nivel de client"</p>
@@ -80,9 +80,38 @@
             pot afla mai multe despre fractalii Lindenmayer. Cea de a doua pagina, createOwn.html, pune la dispozitie utlizatorilor o unealta prin care acestia pot creea si vizualiza fractali. Acestia pot oferi ca input pentru generatorul de fractali informatii precum punctul din care sa inceapa, axioma de inceput, regulile de rescriere, numarul de iteratii si unghiuri care vor fi folosite in desenarea fractalului. Tot odata, aceasta pagina ofera utilizatorilor posibilitatea de a salva munca lor in diverse formate. Cea de a treia
         pagina, premade.html, pune la dispozitie utilizatorilor o galerie cu diverse exemple de fractali si datele de input care vor fi folosite pentru generarea acestora.</p>
 
+        <h3>Interactiuni</h3>
+      <p> Utilizatorului i se ofera doua module     
+      ale aplicatiei cu care sa interactioneze: Galeria, in care clientul poate descoperi diverse modele
+de fractali si metode de generare ale acestora, si Componenta propriu-zisa de desenare de fractali. Aceasta din urma preia de la utilizatori date precum pozitie de start, numar de iteratii, unghiuri, axioma si reguli procesare a literalilor si genereaza un fractal pe care clientii il pot salva la nivel local sau in baza noastra de date. La salvarea datelor in baza noastra de date au acces doar utilizatorii care sunt inregistrati pe platforma noastra, celor neinregistrati fiindu-le restrictionat accesul.
+  </p>
+      
+        <h3>Tehnologii implicate</h3>   
+        <p>Aplicatia nu are in spate un server, asadar pentru gestionarea utilizatorilor si salvarea datelor folosim Firebase, oferit de Google. Firebase permite stocarea datelor de autentificare a unui client asigurand securitatea datelor prin hashurarea parolelor. De asemenea permite crearea unei baze de date structurate, facilitand accestul fisierelor la distanta.
+        Atat inregistrarea cat si logarea se realizeaza cu ajutorul "promisiunilor" returnate de functiile: <code>firebase.auth().createUserWithEmailAndPassword(email, password)</code>, respectiv <code>firebase.auth().signInWithEmailAndPassword(email, password)</code>. Exemplu de logare:</p>
+        <code role="doc-example" typeof="schema:SoftwareSourceCode">loginBtn.addEventListener('click', e =&gt  {
+			  	<br/>&nbsp;console.log("login")
+			  	<br/>&nbsp;const email = txtEmail.value;
+			  	<br/>&nbsp;const pass = textPsw.value;
+			  	<br/>&nbsp;const auth = firebase.auth();
+			  	<br/>&nbsp;if(validateEmail(email))
+          <br/>&nbsp;{
+			  		<br/>&nbsp;&nbsp;&nbsp;const promise = auth.signInWithEmailAndPassword(email, pass);
+			  		<br/>&nbsp;&nbsp;&nbsp;promise.catch(e =&gt console.log(e.message));
+			  		<br/>&nbsp;&nbsp;&nbsp;exitModal();
+			  	<br/>&nbsp;}
+			  <br/>});
+			  
+			  </code>
+      
+        <h3>Structura datelor</h3>
+      <p>Datele preluate de la utilizatori (pozitie de start, numar de iteratii, unghiuri, axioma si reguli procesare a literalilor) sunt gestionate de clasa InputHandler. Punctele in spatiu sunt pastrate intr-o lista de instante ale clasei Point din clasa Renderer. Aceasta din urma se ocupa cu generarea regulii de desenare a fractalului prin metoda <code>expandAxiom()</code>, care mai apoi va fi folosita pentru generarea punctelor ce urmeaza sa fie desenate (metoda <code>generatePoins()</code>) si de desenarea acestora in elementul HTML Canvas (metoda <code>drawOnCanvas()</code>). In ultimul rand clasa File se ocupa cu salvarea datelor sub forma de fisier png sau svg la nivel local sau la distanta in Firebase.</p>
+      <img role="presentation" src="https://cdn.glitch.com/7fea6baf-aa8c-40e8-a4d9-5ddbedcd7de9%2FL-fract-View.png?1544023606434"  />
+      
+      
         <h3>Stadiul actual al proiectului</h3>
         <p>La data de 1.11.2018 proiectul se afla in faza de prototip nefunctional.</p>
-
+        <p>Update: La data de 5.12.2018 arhitectura proiectului este definita, iar acesta se afla in faza de prototip nefunctional.</p>
 
         <div role="doc-bibliography">
             <h3> Bibliografie </h3>

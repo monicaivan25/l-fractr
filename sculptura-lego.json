@@ -1,0 +1,57 @@
+{
+    //un array care contine descrierea pieselor lego folosite in aceasta sculptura lego
+    //va fi util in situatia in care aplicatia va fi extinsa cu posbilitatea de a folosi piese de forme custom
+    //pentru prima etapa a proiectului, trebuiesc definite piesele 1x1, 1x2, 2x2, 1x3, 2x3, 1x4, 2x4, 1x6, 2x6, 1x8, 2x8. Acestea sunt cele default
+    "pieces": [ 
+        {
+            //nume sugestiv care sa descrie dimensiunea piesei
+            "name": "1x1", 
+            //considerand ca o piesa poate fi facuta din cuburi 1x1x1, structure este un array care descrie pozitiile unor astfel de cuburi care ar crea piesa
+            "structure": [ 
+                {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            ]
+        },
+        {
+            "name": "1x2",
+            "structure": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                }
+            ]
+        }
+        //...
+    ],
+    
+    "order": [ 
+        //un array care descrie piesele lego care intra in alcatuirea sculpturii
+        //ATENTIE!! Ordinea pieselor in acest array reprezinta ordinea de asamblare a sculpturii!
+        {  
+            "piece-name": "1x2",
+            "position": {
+                // x, y, z sunt numere intregi, x si z sunt nenegative
+                //pozitia piesei este, de fapt, pozitia unui cub din componenta acesteia care are y-ul cel mai mic
+                //daca sunt mai multe cu acelasi y, atunci x-ul cel mai mic
+                //daca sunt mai multe cu acelasi x, atunci z-ul cel mai mic
+                "x": 2,
+                "y": 3,
+                "z": 4
+            },
+            //sus, in piece structure, este definita orientarea default a unei piese (0 grade)
+            //cum piesa poate fi rotita cu cate 90 de grade, trebuie sa stim rotatia ei finala
+            //se considera ca rotatia se face in sensul acelor de ceas
+            "rotation": (0|90|180|270),
+            "color": "#ABC123"
+        }
+    ] 
+}
