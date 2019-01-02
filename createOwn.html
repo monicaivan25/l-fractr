@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="styleOwn.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-	<!-- <script src="exporting.js"></script> -->
 	<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
 	<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
 	<script src="https://d3js.org/d3.v3.min.js"></script>
@@ -95,7 +94,7 @@
 		<!--bottom buttons -->
 		<a href="index.html" class="bottom-button fa fa-home " id="homebtn"></a>
 		<span id="loginbtn" class="fa fa-fire bottom-button" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;"></span>
-		<span id="savebtn" class="fa fa-download bottom-button" ></span>
+		<span id="savebtn" class="fa fa-download bottom-button" onclick="document.getElementById('save-form').style.display='block'"></span>
 
 		<!--Login modal-->
 		<div id="login-form" class="modal">
@@ -115,10 +114,17 @@
 			</form>
 		</div>
 
+		<div id="save-form" class="modal">
+			<div class="modal-content"><div class="container">
+				<button type="button" id="save-as-svg" class="formbtn">Save as SVG</button>
+				<button type="button" id="save-as-png" class="formbtn">Save as PNG</button>
+				<button type="button" onclick="document.getElementById('save-form').style.display='none'" class="formbtn">Cancel</button>
+			</div></div>
+		</div>
+
 		<h1 id="bigOne"></h1>
 		
 	</body>
 	<script src="fileExport.js"></script>
 	<script src="authentication.js"></script>
-
-</html>
+	</html>
