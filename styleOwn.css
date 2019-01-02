@@ -72,6 +72,10 @@ input[type=radio] + label{
 	cursor: pointer; 	
 }
 
+#asit6{
+	cursor: pointer;
+}
+
 input[type=radio]:checked + label{
 	background-image: none;
 	background-color: #303030;
@@ -168,7 +172,7 @@ input[type=radio]:checked + label{
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 4px 0;
+    margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -216,4 +220,12 @@ input[type=radio]:checked + label{
 
 #logout{
 	display:none;
+}
+
+
+.literal{
+	width:20%	;
+}
+.rule{
+	width:50%;
 }

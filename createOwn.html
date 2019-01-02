@@ -7,9 +7,8 @@
 	<link rel="stylesheet" href="styleOwn.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-	<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
-	<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
-	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<!-- <script src="createOwn.js"></script> -->
+	
 
 </head>
 <body>
@@ -68,63 +67,166 @@
 				</div>
 			</div>
 			<div class="asideItem" id="asit5">
-				<p class="myh1">Rules</p>
+				<p class="myh1">Rules</p><br>
+				<!--
 				<div>
 					<div class="anglesInput" id="rulesSmall">
 						<input type="text" class="smallInput" id="literal"/>
 					</div>
 					<span id="eq" style="color: white;">=</span>
 					<div class="axrule">
-						<input type="text" id="rule"/></div>
+						<input type="text" id="rule"/>
+						</div>
 					</div>
-					<div style="height:8px"></div>
-					<button id="addbutton">Add</button>
-				</div>
-				<div class="asideItem" id="asit6">
-					<p class="myh1">Render</p>
-				</div>
+				-->
 
-				
+				<form id="rulesForm">
+					<p class="myh2">First rule:</p>
+					<input type="text" name="firstLiteral" class="literal"><span style="color:white"> = </span> <input type="text" name="firstRule" class="rule"><br><br>
 
-			</aside>
-			<main id="canvas">
+					<p class="myh2">Second rule:</p>
+					<input type="text" name="secondLiteral" class="literal"><span style="color:white"> = </span> <input type="text" name="secondRule" class="rule"><br><br>
 
-			</main>
-		</div>
-		<!--bottom buttons -->
-		<a href="index.html" class="bottom-button fa fa-home " id="homebtn"></a>
-		<span id="loginbtn" class="fa fa-fire bottom-button" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;"></span>
-		<span id="savebtn" class="fa fa-download bottom-button" onclick="document.getElementById('save-form').style.display='block'"></span>
+					<p class="myh2">Third rule:</p>
+					<input type="text" name="thirdLiteral" class="literal"><span style="color:white"> = </span> <input type="text" name="thirdRule" class="rule"><br><br>
 
-		<!--Login modal-->
-		<div id="login-form" class="modal">
+					<p class="myh2">Fourth rule:</p>
+					<input type="text" name="fourthLiteral" class="literal"><span style="color:white"> = </span> <input type="text" name="fourthRule" class="rule"><br><br>
+				</form>
+			</div>
+			<div class="asideItem" id="asit6">
+				<p class="myh1">Render</p>
+			</div>
 
-			<form class="modal-content">
 
-				<div class="container">
-					<input type="text" class="field" placeholder="Enter Email" id="txtEmail" required>
-					<input type="password" class="field" style="width:100%" placeholder="Enter Password" id="textPsw" required>
 
-					<button type="button" id="login" class="formbtn">Log In</button>
-					<button type="button" id="logout" class="formbtn">Log out</button>
-					<button type="button" id="signup" class="formbtn">Sign Up</button>
-					<button type="button" onclick="document.getElementById('login-form').style.display='none'" class="formbtn">Cancel</button>
-					
-				</div>
-			</form>
-		</div>
+		</aside>
+		<main class="canvas">
 
-		<div id="save-form" class="modal">
-			<div class="modal-content"><div class="container">
-				<button type="button" id="save-as-svg" class="formbtn">Save as SVG</button>
-				<button type="button" id="save-as-png" class="formbtn">Save as PNG</button>
-				<button type="button" onclick="document.getElementById('save-form').style.display='none'" class="formbtn">Cancel</button>
-			</div></div>
-		</div>
+		</main>
+	</div>
+	<!--bottom buttons -->
+	<a href="index.html" class="bottom-button fa fa-home " id="homebtn"></a>
+	<span id="loginbtn" class="fa fa-fire bottom-button" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;"></span>
+	<span id="savebtn" class="fa fa-download bottom-button" ></span>
 
-		<h1 id="bigOne"></h1>
-		
-	</body>
-	<script src="fileExport.js"></script>
-	<script src="authentication.js"></script>
-	</html>
+	<!--Login modal-->
+	<div id="login-form" class="modal">
+
+		<form class="modal-content">
+
+			<div class="container">
+				<input type="text" class="field" placeholder="Enter Email" id="txtEmail" required>
+				<input type="password" class="field" style="width:100%" placeholder="Enter Password" id="textPsw" required>
+
+				<button type="button" id="login" class="formbtn">Log In</button>
+				<button type="button" id="logout" class="formbtn">Log out</button>
+				<button type="button" id="signup" class="formbtn">Sign Up</button>
+				<button type="button" onclick="document.getElementById('login-form').style.display='none'" class="formbtn">Cancel</button>
+
+			</div>
+		</form>
+	</div>
+
+	<h1 id="bigOne"></h1>
+
+	<script>
+			  // Initialize Firebase
+			  var config = {
+			  	apiKey: "AIzaSyAZxvFhAhfPt__c6jb1aLTUM8jhdzD44eg",
+			  	authDomain: "l-fractr.firebaseapp.com",
+			  	databaseURL: "https://l-fractr.firebaseio.com",
+			  	projectId: "l-fractr",
+			  	storageBucket: "l-fractr.appspot.com",
+			  	messagingSenderId: "480520325235"
+			  };
+			  firebase.initializeApp(config);
+
+			  const modal = document.getElementById('login-form');
+			  const txtEmail = document.getElementById("txtEmail");
+			  const textPsw = document.getElementById("textPsw");
+			  const loginBtn = document.getElementById("login");
+			  const signupBtn = document.getElementById("signup");
+			  const logoutBtn = document.getElementById("logout");
+
+			  function exitModal(){
+			  	modal.style.display = 'none';
+			  	txtEmail.value='';
+			  	textPsw.value='';
+			  }
+
+			  function validateEmail(inputText)
+			  {
+			  	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			  	if(inputText.match(mailformat))
+			  	{
+			  		return true;
+			  	}
+			  	else
+			  	{
+			  		alert("You have entered an invalid email address!");
+			  		return false;
+			  	}
+			  }
+
+			  loginBtn.addEventListener('click', e => {
+			  	console.log("login")
+			  	const email = txtEmail.value;
+			  	const pass = textPsw.value;
+			  	const auth = firebase.auth();
+			  	if(validateEmail(email))
+			  	{
+			  		const promise = auth.signInWithEmailAndPassword(email, pass);
+			  		promise.catch(e => console.log(e.message));
+			  		exitModal();
+			  	}
+			  });
+			  
+			  signupBtn.addEventListener('click', e =>{
+			  	console.log("signup")
+			  	const email = txtEmail.value;
+			  	const pass = textPsw.value;
+			  	const auth = firebase.auth();
+			  	if(validateEmail(email))
+			  	{
+			  		const promise =  auth.createUserWithEmailAndPassword(email, pass);
+			  		promise.catch(e => console.log(e.message));
+			  		exitModal();
+			  	}
+			  });
+
+			  logoutBtn.addEventListener('click', e => {
+			  	console.log('logout');
+			  	firebase.auth().signOut();
+			  	exitModal();
+			  });
+
+			  firebase.auth().onAuthStateChanged(firebaseUser => {
+			  	if(firebaseUser){
+			  		console.log(firebaseUser);
+			  		logoutBtn.style.display = 'block';
+			  		loginBtn.style.display = 'none';
+			  		signupBtn.style.display = 'none';
+			  		writeUserData("email");
+
+			  	} else {
+			  		console.log('not logged in');
+			  		logoutBtn.style.display = 'none';
+			  		loginBtn.style.display = 'block';
+			  		signupBtn.style.display = 'block';
+			  	}
+			  })
+
+			  var database = firebase.database();
+
+			  function writeUserData(email) {
+			  	console.log(email);
+			  	firebase.database().ref('users/' + email).set({
+			  		caca: 2
+			  	});
+			  }
+
+			</script>
+			<script src="fractGen.js"></script>
+		</body>
+		</html>
