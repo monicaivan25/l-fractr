@@ -36,7 +36,7 @@ savePngBtn.addEventListener('click', function(){
 	var svgString = getSVGString(svg.node());
 	svgString2Image( svgString, 2*width, 2*height, 'png', save ); // passes Blob and filesize String to the callback
 	function save( dataBlob, filesize ){
-		saveAs( dataBlob, 'D3 vis exported to PNG.png' ); // FileSaver.js function
+		saveAs( dataBlob, 'fractal.png' ); // FileSaver.js function
 	}
 });
 
