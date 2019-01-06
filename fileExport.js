@@ -32,6 +32,7 @@ chart.selectAll('cirle')
 
 
 var loggedUser;
+var num = 0;
 
 // Local save buttons
 var savePngBtn = document.getElementById("save-as-png");
@@ -53,12 +54,42 @@ saveSvgBtn.addEventListener('click', function(){
 //remote save button
 var saveRemoteBtn = document.getElementById("save-remote");
 saveRemoteBtn.addEventListener('click', function(){
+
 	var svgString = getSVGString(svg.node());
 	console.log("saving remotely");
 	var blob = new Blob([svgString], {type: "text/plain;charset=utf-8"});
-	var storageRef = firebase.storage().ref(loggedUser + '/titlu2' + '.svg').put(blob);
+	var title = getTitle();
+	var storageRef = firebase.storage().ref(loggedUser + '/' + title + '.svg').put(blob);
 
+	var database = firebase.database();
+	var folderName = getFolderNameForEmail(loggedUser);
+	firebase.database().ref(folderName + '/' + title).set({
+		imgRef : loggedUser + '/' + title + '.svg',
+		startingPositionX : 10,
+		startingPositionY : 10,
+		numberOfIterations: 10,
+		startingAngle : 10,
+		incrementingAngle: 10,
+		axiom: 10,
+		rule1: 10,
+		rule2: 10,
+		rule3: 10,
+		rule4: 10
+	});
 });
+
+
+function getTitle(){
+	var title = prompt("Save As", "Custom fractal");
+	if (title != null) {
+		return title;
+	} else {
+		title = "CustomFractal" + num;
+		num ++;
+	}
+	return title;
+}
+
 
 function getSVGString( svgNode ) {
 	svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
@@ -95,29 +126,36 @@ function svgString2Image( svgString, width, height, format, callback ) {
 	image.src = imgsrc;
 }
 
-firebase.auth().onAuthStateChanged(firebaseUser => {
-	if(firebaseUser){
-		loggedUser = firebaseUser.email;
-		console.log(firebaseUser);
-		title.style.display = 'block';
-		gallery.style.display = 'block';
-		modalContent.style.width = '780px';
-		txtEmail.style.display = 'none';
-		textPsw.style.display = 'none';
-		logoutBtn.style.display = 'inline-block';
-		loginBtn.style.display = 'none';
-		signupBtn.style.display = 'none';
-		saveFireBtn.style.display = 'block';
-	} else {
-		console.log('not logged in');
-		title.style.display = 'none';
-		gallery.style.display = 'none';
-		modalContent.style.width = '400px';
-		txtEmail.style.display = 'block';
-		textPsw.style.display = 'block';
-		logoutBtn.style.display = 'none';
-		loginBtn.style.display = 'block';
-		signupBtn.style.display = 'block';
-		saveFireBtn.style.display = 'none';
-	}
-})
+
+function loadImages(){
+	console.log("DONWLOADING");
+
+	//var storageRef = firebase.storage().ref(loggedUser + '/' + title + '.svg').put(blob);
+
+	var database = firebase.database();
+	var folderName = getFolderNameForEmail(loggedUser);
+	firebase.database().ref(folderName).once("value", function(snapshot) {
+		snapshot.forEach(function(child) {
+			
+			var imageLink = child.child('imgRef').val();
+			console.log(imageLink);
+		});
+		// console.log(snapshot.val());
+	});
+
+
+	var gallery = document.getElementById("gallery");
+
+
+
+}
+
+function getFolderNameForEmail(email){
+	email = email.replace('@','');
+	email = email.replace('.','');
+	email = email.replace(',','');
+	email = email.replace('_','');
+	email = email.replace('[','');
+	email = email.replace(']','');
+	return email;
+}

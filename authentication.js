@@ -89,6 +89,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 		loginBtn.style.display = 'none';
 		signupBtn.style.display = 'none';
 		saveFireBtn.style.display = 'block';
+
+		loadImages();
 	} else {
 		console.log('not logged in');
 		title.style.display = 'none';
