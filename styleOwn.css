@@ -230,38 +230,6 @@ input[type=radio]:checked + label{
 	width:50%;
 }
 
-.wrapper {
-	box-sizing: border-box;
-	display: grid;
-	grid-gap: 0.25%;
-	height: 100%;
-	width: 100%;
-	grid-template-columns: 19.85% 19.85% 19.85% 19.85% 19.85%;
-}
-
-.box {
-	height: 100%;
-	width: 100%;
-	background-color: #000000;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	position:relative;
-}
-
-.box:hover img {
-	opacity: 0.3;
-}
-
-.box:hover .middle {
-	opacity: 1;
-}
-
-.bottom-right {
-	color: #fff;
-	position: absolute;
-	bottom: 15%;
-	right: 15%;
-}
-
 .gallery {
 	display: none; 
 	position: fixed; 
@@ -340,4 +308,21 @@ input[type=radio]:checked + label{
 #title{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 	font-size: 14px;
+}
+
+#gallery {
+	border: none;
+	padding: 5px;
+	font: 24px/36px sans-serif;
+	width: 700px;
+	height: 300px;
+	overflow: scroll;
+}
+
+.row{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 14px;
+	color: #4CAF50;
+	padding: 5px;
+	cursor: pointer;
 }
