@@ -19,6 +19,8 @@ const modalContent = document.getElementsByClassName("modal-content")[0];
 const title = document.getElementById("title");
 const gallery = document.getElementById("gallery");
 const saveFireBtn = document.getElementById("save-remote");
+var loggedUser = '';
+
 function exitModal(){
 	modal.style.display = 'none';
 	txtEmail.value='';
@@ -50,8 +52,8 @@ loginBtn.addEventListener('click', e => {
 		const promise = auth.signInWithEmailAndPassword(email, pass);
 		promise.catch(e => console.log(e.message));
 		exitModal();
-		alert('Logged in');
-		loggedUser = getFolderNameForEmail(email);
+		showSnackBar('Logged in');
+		// loggedUser = getFolderNameForEmail(email);
 	}
 });
 
@@ -65,7 +67,7 @@ signupBtn.addEventListener('click', e =>{
 		const promise =  auth.createUserWithEmailAndPassword(email, pass);
 		promise.catch(e => console.log(e.message));
 		exitModal();
-		alert('Signed up');
+		showSnackBar('Signed up');
 	}
 });
 
@@ -73,7 +75,7 @@ logoutBtn.addEventListener('click', e => {
 	console.log('logout');
 	firebase.auth().signOut();
 	exitModal();
-	alert('Logged out');
+	showSnackBar('Logged out');
 });
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -92,6 +94,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 		loadFiles();
 	} else {
+		loggedUser = '';
 		console.log('not logged in');
 		title.style.display = 'none';
 		gallery.style.display = 'none';
@@ -117,5 +120,12 @@ String.prototype.hashCode = function() {
         hash = hash & hash; // Convert to 32bit integer
     }
     return hash;
+}
+
+function showSnackBar(message) {
+  var snackbar = document.getElementById("snackbar");
+  snackbar.innerHTML = message;
+  snackbar.className = "show";
+  setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
 }
 

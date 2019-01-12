@@ -3,7 +3,19 @@ var svg = document.getElementById("fractalCanvas");
 var loggedUser;
 var num = 0;
 
+
+const loginForm = document.getElementById("login-form");
+const saveForm = document.getElementById("save-form");
 // Local save buttons
+
+window.onclick = function(event) {
+  if (event.target == loginForm) {
+    loginForm.style.display = "none";
+  }
+  if (event.target == saveForm) {
+    saveForm.style.display = "none";
+  }
+}
 
 var savePngBtn = document.getElementById("save-as-png");
 savePngBtn.addEventListener('click', function(){
@@ -15,6 +27,7 @@ savePngBtn.addEventListener('click', function(){
 	function save( dataBlob, filesize ){
 		saveAs( dataBlob, 'fractal.png' ); // FileSaver.js function
 	}
+	saveForm.style.display = 'none';
 });
 
 var saveSvgBtn = document.getElementById("save-as-svg");
@@ -24,6 +37,7 @@ saveSvgBtn.addEventListener('click', function(){
 	var svgString = getSVGString(svg);
 	var blob = new Blob([svgString], {type: "text/plain;charset=utf-8"});
 	saveAs(blob, "fractal.svg");
+	saveForm.style.display = 'none';
 });
 
 //remote save button
@@ -58,6 +72,9 @@ saveRemoteBtn.addEventListener('click', function(){
 		rule4Lit: oForm.elements["fourthLiteral"].value,
 		rule4Exp: oForm.elements["fourthRule"].value
 	});
+
+	saveForm.style.display = 'none';
+
 });
 
 
@@ -124,6 +141,7 @@ function loadFiles(){
 			div.innerHTML = folderName + '/' + name;
 			div.addEventListener("click", function(){
 				downloadChild(child);
+				loginForm.style.display = 'none';
 			});
 			gallery.appendChild(div);
 

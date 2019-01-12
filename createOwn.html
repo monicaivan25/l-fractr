@@ -95,51 +95,51 @@
 				
 			</svg>
 		</main>
-		</div>
-		<!--bottom buttons -->
-		<a href="index.html" class="bottom-button fa fa-home " id="homebtn"></a>
-		<span id="loginbtn" class="fa fa-fire bottom-button" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;"></span>
-		<span id="savebtn" class="fa fa-download bottom-button" onclick="document.getElementById('save-form').style.display='block'"></span>
+	</div>
+	<!--bottom buttons -->
+	<a href="index.html" class="bottom-button fa fa-home " id="homebtn"></a>
+	<span id="loginbtn" class="fa fa-fire bottom-button" onclick="document.getElementById('login-form').style.display='block'" style="width:auto;"></span>
+	<span id="savebtn" class="fa fa-download bottom-button" onclick="document.getElementById('save-form').style.display='block'"></span>
 
-		<!--Login modal-->
-		<div id="login-form" class="modal">
+	<!--Login modal-->
+	<div id="login-form" class="modal">
 
-			<form class="modal-content">
+		<form id="modd" class="modal-content">
 
-				<div class="container">
-					<input type="text" class="field" placeholder="Enter Email" id="txtEmail" required>
-					<input type="password" class="field" style="width:100%" placeholder="Enter Password" id="textPsw" required>
-					<label id = "title"> Import fractal from Firebase Storage </label>
-					<div id="gallery">
+			<div id = "mod" class="container">
+				<input type="text" class="field" placeholder="Enter Email" id="txtEmail" required>
+				<input type="password" class="field" style="width:100%" placeholder="Enter Password" id="textPsw" required>
+				<label id = "title"> Import fractal from Firebase Storage </label>
+				<div id="gallery">
 
-						
-					</div>
-					<button type="button" id="login" class="formbtn">Log In</button>
-					<button type="button" id="logout" class="formbtn">Log out</button>
-					<button type="button" id="signup" class="formbtn">Sign Up</button>
-
-					<button type="button" onclick="document.getElementById('login-form').style.display='none'" class="formbtn">Cancel</button>
 
 				</div>
-			</form>
-		</div>
+				<button type="button" id="login" class="formbtn">Log In</button>
+				<button type="button" id="logout" class="formbtn">Log out</button>
+				<button type="button" id="signup" class="formbtn">Sign Up</button>
 
-		<!-- Save modal -->
-		<div id="save-form" class="modal">
-			<div class="modal-content"><div class="container">
-				<button type="button" id="save-as-svg" class="formbtn">Save as SVG</button>
-				<button type="button" id="save-as-png" class="formbtn">Save as PNG</button>
-				<button type="button" id="save-remote" class="formbtn">Export to Firebase</button>
+				<button type="button" onclick="document.getElementById('login-form').style.display='none'" class="formbtn">Cancel</button>
 
-				<button type="button" onclick="document.getElementById('save-form').style.display='none'" class="formbtn">Cancel</button>
-			</div></div>
-		</div>
+			</div>
+		</form>
+	</div>
 
+	<!-- Save modal -->
+	<div id="save-form" class="modal">
+		<div class="modal-content"><div class="container">
+			<button type="button" id="save-as-svg" class="formbtn">Save as SVG</button>
+			<button type="button" id="save-as-png" class="formbtn">Save as PNG</button>
+			<button type="button" id="save-remote" class="formbtn">Export to Firebase</button>
 
-		<h1 id="bigOne"></h1>
+			<button type="button" onclick="document.getElementById('save-form').style.display='none'" class="formbtn">Cancel</button>
+		</div></div>
+	</div>
+	<div id="snackbar"></div>
 
-		<script src="fractGen.js"></script>
-		<script src="fileExport.js"></script>
-		<script src="authentication.js"></script>
-	</body>
+	<h1 id="bigOne"></h1>
+
+	<script src="fractGen.js"></script>
+	<script src="fileExport.js"></script>
+	<script src="authentication.js"></script>
+</body>
 </html>
