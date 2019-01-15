@@ -13,13 +13,14 @@ class fractGen{
 		var aux="";
 
 		for(var letter=0;letter<this.axiom.length;letter++){
-			if(!this.signs.includes(this.axiom[letter])){
+			if(!this.signs.includes(this.axiom[letter]) && Object.keys(this.rules).includes(this.axiom[letter])){
 				aux+=this.rules[this.axiom[letter]];
 			}else{
 				aux+=this.axiom[letter];
 			}
 		}
 		this.axiom=aux;
+		console.log(this.axiom);
 	}
 
 	displayOnCanvas(){
