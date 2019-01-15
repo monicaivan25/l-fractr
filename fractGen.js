@@ -35,6 +35,7 @@ class fractGen{
 		var svgline="";
 		var xstack=[],ystack=[],astack=[];
 		var doStuff=0;
+		var batch="";
 		for(var letter=0;letter<this.axiom.length;letter++){
 			switch(this.axiom[letter]){
 				case '-':
@@ -60,11 +61,12 @@ class fractGen{
 					svgline="";
 					svgline+='<line x1="'+currentPoint.x+'" y1="'+currentPoint.y+'" ';
 					svgline+='x2="'+nextPoint.x+'" y2="'+nextPoint.y+'"  style="stroke:#000000;"/>';
-					canvas.innerHTML+=svgline;
+					batch+=svgline;
 					currentPoint.x=nextPoint.x.valueOf();
 					currentPoint.y=nextPoint.y.valueOf();
 			}
 		}
+		canvas.innerHTML+=batch;
 	}
 
 	generateFractal(){
