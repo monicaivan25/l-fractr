@@ -23,7 +23,7 @@
 			<div class="asideItem" id="asit2">
 				<p class="myh1">Number of iterations</p>
 				<div>					
-					<input type='radio' value='1' name='radio' id='radio1'/>
+					<input type='radio' value='1' name='radio' id='radio1' checked/>
 					<label for='radio1'> 1 </label>
 
 					<input type='radio' value='2' name='radio' id='radio2'/>
@@ -46,18 +46,25 @@
 				</div>
 			</div>
 			<div class="asideItem" id="asit3">
-				<p class="myh1">Angles</p>
+				<p class="myh1">Angles & Lines</p>
 				<div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto">
 					<p class="myh2">Starting: </p>
 					<div class="anglesInput">
-						<input type="text" class="smallInput" id="startDegree"/>
+						<input type="text" class="smallInput" id="startDegree" value="0"/>
 					</div>
 				</div>
 				<div style="height:3px"></div>
 				<div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto">
 					<p class="myh2">Incrementing: </p>
 					<div class="anglesInput"> 
-						<input type="text" class="smallInput" id="incrDegree"/>
+						<input type="text" class="smallInput" id="incrDegree" value="90"/>
+					</div>
+				</div>
+				<div style="height:3px"></div>
+				<div style="display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto">
+					<p class="myh2">Line length: </p>
+					<div class="anglesInput"> 
+						<input type="text" class="smallInput" id="lineLen" value="4"/>
 					</div>
 				</div>
 			</div>

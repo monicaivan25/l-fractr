@@ -1,12 +1,14 @@
 class fractGen{
-	constructor(startPos,nrIt,angleS,angleI,axiom,rules){
-		this.startPos=startPos;
-		this.nrIt=nrIt;
-		this.angleS=angleS;
-		this.angleI=angleI;
-		this.axiom=axiom;
-		this.rules=rules;
-		this.signs="-+[]";
+	constructor(axiom,rules,startPos = {"x":0,"y":0},nrIt = 1,angleS = 0,angleI = 90,lineLen = 4){
+		this.startPos = startPos;
+		this.nrIt = nrIt;
+		this.angleS = angleS;
+		this.angleI = angleI;
+		this.axiom = axiom;
+		this.rules = rules;
+		this.signs = "-+[]";
+		this.lineLen = lineLen;
+		console.log(this.lineLen);
 	}
 
 	expand(){
@@ -57,8 +59,8 @@ class fractGen{
 					break;
 				default:
 					console.log(doStuff++);
-					nextPoint.x=currentPoint.x + 4*Math.cos(Math.PI * angle / 180.0);
-					nextPoint.y=currentPoint.y + 4*Math.sin(Math.PI * angle / 180.0);
+					nextPoint.x=currentPoint.x + this.lineLen*Math.cos(Math.PI * angle / 180.0);
+					nextPoint.y=currentPoint.y + this.lineLen*Math.sin(Math.PI * angle / 180.0);
 					svgline="";
 					svgline+='<line x1="'+currentPoint.x+'" y1="'+currentPoint.y+'" ';
 					svgline+='x2="'+nextPoint.x+'" y2="'+nextPoint.y+'"  style="stroke:#000000;"/>';
@@ -109,8 +111,12 @@ render.addEventListener("click",function(){
 	}
 
 	//angles:
-	var starting=parseInt(document.getElementById("startDegree").value);
-	var incrementing=parseInt(document.getElementById("incrDegree").value);
+	if(document.getElementById("startDegree").value != "")
+		var starting=parseInt(document.getElementById("startDegree").value);
+	if(document.getElementById("incrDegree").value != "")
+		var incrementing=parseInt(document.getElementById("incrDegree").value);
+	if(document.getElementById("lineLen").value != "")
+		var lineLen=parseInt(document.getElementById("lineLen").value);
 
 	//axiom:
 	var axiom=document.getElementById("axiom").value;
@@ -127,7 +133,7 @@ render.addEventListener("click",function(){
 	if(oForm.elements["fourthLiteral"].value!="")
 		rules[oForm.elements["fourthLiteral"].value]=oForm.elements["fourthRule"].value;
 
-	var fracty=new fractGen({x,y},iterations,starting,incrementing,axiom,rules);
+	var fracty=new fractGen(axiom,rules,{x,y},iterations,starting,incrementing,lineLen);
 	fracty.generateFractal();
 });
 
