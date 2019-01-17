@@ -23,7 +23,7 @@ savePngBtn.addEventListener('click', function(){
 	svg.removeAttribute("xmlns");
 
 	var svgString = getSVGString(svg);
-	svgString2Image( svgString, 500	, 500, 'png', save ); // passes Blob and filesize String to the callback
+	svgString2Image( svgString, 1000, 1000, 'png', save ); // passes Blob and filesize String to the callback
 	function save( dataBlob, filesize ){
 		saveAs( dataBlob, 'fractal.png' ); // FileSaver.js function
 	}
