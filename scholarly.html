@@ -117,76 +117,99 @@
         <p></p>
 
         <h3 role="title">Salvarea Fractalilor</h3>
-        <p></p>
-        
+        <p>Cum am mentionat mai sus in sectiunea "Tehnologii implicate", am folosit Firebase atat pentru autentificare si salvarea datelor confidentiale utilizatorului, cat si pentru a stoca fractalii creati de utilizator. Folosing Firebase Realtime Database, la inregistrarea fiecarui utilizator nou cream un nou folder pentru acesta, unde ii vor fi stocate datele. Fiecare fractal este salvat ca un json sub forma:
+            <code role="doc-example" typeof="schema:SoftwareSourceCode">
+                <br/>fractalName: {
+                <br/>&nbsp;axiom: "axiom",
+                <br/>&nbsp;imgRef: "svgText",
+                <br/>&nbsp;incrementingAngle: 0,
+                <br/>&nbsp;numberOfIterations: 0,
+                <br/>&nbsp;rule1Expr: "",
+                <br/>&nbsp;rule1Lit: "",
+                <br/>&nbsp;rule2Expr: "",
+                <br/>&nbsp;rule2Lit: "",
+                <br/>&nbsp;rule3Expr: "",
+                <br/>&nbsp;rule3Lit: "",
+                <br/>&nbsp;rule4Expr: "",
+                <br/>&nbsp;rule4Lit: "",
+                <br/>&nbsp;startingAngle: 0,
+                <br/>&nbsp;startingPositionX: 0,
+                <br/>&nbsp;startingPositionY: 0
+                <br/>}
+            </code>
+
+        Pentru salvarea imaginilor local, am folosit biblioteca FileSaver.js. Am creat o metoda save(blob, filesize) folosita drept callback functiei svgString2Image, menite sa alipeasca stringului svg atributele necesare salvarii png. Atat pentru imagini cu extensia .png, cat si .svg am folosit metoda specifica bibliotecii FileSaver, si anume saveAs(dataBlob, name). 
+        </p>
+
     </section>
-           
 
-          <h3>Stadiul actual al proiectului</h3>
-          <p>La data de 1.11.2018 proiectul se afla in faza de prototip nefunctional.</p>
-          <p>Update: La data de 5.12.2018 arhitectura proiectului este definita, iar acesta se afla in faza de prototip nefunctional.</p>
 
-          <div role="doc-bibliography">
-            <h3> Bibliografie </h3>
-            <ul>
-                <li typeof="schema:Book" role="doc-biblioentry" property="schema:citation">
-                    <cite property="schema:name">
-                        <a href="http://algorithmicbotany.org/papers/#abop">The Algorithmic Beauty of Plants
-                        </a>
-                    </cite>,
-                    autor 
-                    <span property="schema:author" typeof="schema:Person">
-                        <span property="schema:givenName">Springer</span>
-                        <span property="schema:familyName">Verlag</span>
-                    </span>
-                    ; publicat in
-                    <time property="schema:datePublished" datatype="xsd:gYear"
-                    datetime="1990">1990</time>.
-                </li>
-                <li typeof="schema:Book" role="doc-biblioentry" resource="http://www0.cs.ucl.ac.uk/staff/p.bentley/teaching/L6_reading/lsystems.pdf" property="schema:citation">
-                    <cite property="schema:name">
-                        <a href="http://www0.cs.ucl.ac.uk/staff/p.bentley/teaching/L6_reading/lsystems.pdf">Mathematical Models for Cellular Interactions in Development 
-                        </a>
-                    </cite>,
-                    autor 
-                    <span property="schema:author" typeof="schema:Person">
-                        <span property="schema:givenName">Aristid</span>
-                        <span property="schema:familyName">Lindenmayer</span>
-                    </span>
-                    ; publicat in
-                    <time property="schema:datePublished" datatype="xsd:gYear"
-                    datetime="1968">1968</time>.
-                </li>
-                <li typeof="schema:WebPage" role="doc-biblioentry" resource="https://en.wikipedia.org/wiki/L-system" property="schema:citation">
-                    <cite property="schema:name">
-                        <a href="https://en.wikipedia.org/wiki/L-system">L-systems</a>
-                    </cite>,
-                    autor 
-                    <span property="schema:author" typeof="schema:Person">
-                        <span property="schema:givenName">Unknown,</span>
-                        <span property="schema:familyName">Wikipedia</span>
-                    </span>
-                    ; publicat in
-                    <time property="schema:datePublished" datatype="xsd:gYear"
-                    datetime="2017">2017</time>.
-                </li>
-                <li typeof="schema:WebPage" role="doc-biblioentry" resource="https://www.w3schools.com" property="schema:citation">
-                    <cite property="schema:name">
-                        <a href="https://www.w3schools.com">W3Schools</a>
-                    </cite>,
-                    autor 
-                    <span property="schema:author" typeof="schema:Person">
-                        <span property="schema:givenName">Refnes</span>
-                        <span property="schema:familyName">Data</span>
-                    </span>
-                    ; publicat in
-                    <time property="schema:datePublished" datatype="xsd:gYear"
-                    datetime="1999">1999</time>.
-                </li>
+    <h3>Stadiul actual al proiectului</h3>
+    <p>La data de 1.11.2018 proiectul se afla in faza de prototip nefunctional.</p>
+    <p>Update: La data de 5.12.2018 arhitectura proiectului este definita, iar acesta se afla in faza de prototip nefunctional.</p>
+    <p>Update: La data de 17.01.2019 proiectul este final.</p>
 
-            </ul>
-        </div>
-    </article>
+    <div role="doc-bibliography">
+        <h3> Bibliografie </h3>
+        <ul>
+            <li typeof="schema:Book" role="doc-biblioentry" property="schema:citation">
+                <cite property="schema:name">
+                    <a href="http://algorithmicbotany.org/papers/#abop">The Algorithmic Beauty of Plants
+                    </a>
+                </cite>,
+                autor 
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:givenName">Springer</span>
+                    <span property="schema:familyName">Verlag</span>
+                </span>
+                ; publicat in
+                <time property="schema:datePublished" datatype="xsd:gYear"
+                datetime="1990">1990</time>.
+            </li>
+            <li typeof="schema:Book" role="doc-biblioentry" resource="http://www0.cs.ucl.ac.uk/staff/p.bentley/teaching/L6_reading/lsystems.pdf" property="schema:citation">
+                <cite property="schema:name">
+                    <a href="http://www0.cs.ucl.ac.uk/staff/p.bentley/teaching/L6_reading/lsystems.pdf">Mathematical Models for Cellular Interactions in Development 
+                    </a>
+                </cite>,
+                autor 
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:givenName">Aristid</span>
+                    <span property="schema:familyName">Lindenmayer</span>
+                </span>
+                ; publicat in
+                <time property="schema:datePublished" datatype="xsd:gYear"
+                datetime="1968">1968</time>.
+            </li>
+            <li typeof="schema:WebPage" role="doc-biblioentry" resource="https://en.wikipedia.org/wiki/L-system" property="schema:citation">
+                <cite property="schema:name">
+                    <a href="https://en.wikipedia.org/wiki/L-system">L-systems</a>
+                </cite>,
+                autor 
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:givenName">Unknown,</span>
+                    <span property="schema:familyName">Wikipedia</span>
+                </span>
+                ; publicat in
+                <time property="schema:datePublished" datatype="xsd:gYear"
+                datetime="2017">2017</time>.
+            </li>
+            <li typeof="schema:WebPage" role="doc-biblioentry" resource="https://www.w3schools.com" property="schema:citation">
+                <cite property="schema:name">
+                    <a href="https://www.w3schools.com">W3Schools</a>
+                </cite>,
+                autor 
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:givenName">Refnes</span>
+                    <span property="schema:familyName">Data</span>
+                </span>
+                ; publicat in
+                <time property="schema:datePublished" datatype="xsd:gYear"
+                datetime="1999">1999</time>.
+            </li>
+
+        </ul>
+    </div>
+</article>
 
 </body>
 </html>
